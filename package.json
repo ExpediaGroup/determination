@@ -1,0 +1,39 @@
+{
+  "name": "determination",
+  "description": "",
+  "version": "0.0.1",
+  "author": "Trevor Livingston <tlivings@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tlivings/determination.git"
+  },
+  "bugs": "http://github.com/tlivings/determination/issues",
+  "engines": {
+    "node": ">= 6.0.0"
+  },
+  "dependencies": {
+    "async": "^2.3.0",
+    "caller": "^1.0.1",
+    "co": "^4.6.0",
+    "confidence": "^3.0.2",
+    "dot-prop": "^4.1.1",
+    "entries": "^1.0.1",
+    "hoek": "^4.1.1",
+    "joi": "^10.4.1",
+    "shortstop": "^1.0.3",
+    "shush": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.7.1",
+    "eslint-config-hapi": "^10.0.0",
+    "eslint-plugin-hapi": "^4.0.0",
+    "istanbul": "^0.4.1",
+    "tape": "^4.2.2"
+  },
+  "scripts": {
+    "cover": "istanbul cover tape -- test/*.js",
+    "lint": "eslint lib",
+    "test": "tape test/*.js"
+  },
+  "main": "./lib"
+}

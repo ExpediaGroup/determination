@@ -1,0 +1,8 @@
+{
+    "test": {
+        "$filter": "pass",
+        "$default": { "value" : true },
+        "false": { "value" : false }
+    },
+    "copy": "config:test"
+}

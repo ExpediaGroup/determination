@@ -1,0 +1,5 @@
+{
+    "key": "value",
+    "copy": "config:noexist",
+    "error": "error:blamo"
+}
