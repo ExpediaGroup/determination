@@ -1,6 +1,6 @@
 # determination
 
-Configuration resolver. `determination` loads a JSON configuration file, resolving against criteria using [confidence] (https://github.com/hapijs/confidence) and [shortstop](https://github.com/krakenjs/shortstop) protocol handlers.
+Configuration resolver. `determination` loads a JSON configuration file, resolving against criteria using [confidence](https://github.com/hapijs/confidence) and [shortstop](https://github.com/krakenjs/shortstop) protocol handlers.
 
 In addition, `determination` supports javascript style comments in your JSON using [shush](https://github.com/krakenjs/shush).
 
