@@ -27,6 +27,50 @@ Test('test determination', (t) => {
 
     }));
 
+    t.test('resolve import', Co.wrap(function *(t) {
+        t.plan(1);
+
+        const criteria = {
+            pass: 'false'
+        };
+
+        try {
+            const config = yield Determination.create({ config: Path.join(__dirname, './fixtures/c.json'), criteria }).resolve();
+
+            t.equal(config.get('a.test.value'), false, 'criteria resolved.');
+        }
+        catch (error) {
+            console.log(error);
+        }
+
+    }));
+
+    t.test('resolve with defaults', Co.wrap(function *(t) {
+        t.plan(3);
+
+        const defaults = {
+            defaults: {
+                copy: 'config:test.value'
+            }
+        };
+
+        const criteria = {
+            pass: 'false'
+        };
+
+        try {
+            const config = yield Determination.create({ config: Path.join(__dirname, './fixtures/a.json'), criteria, defaults }).resolve();
+
+            t.equal(config.get('test.value'), false, 'criteria resolved.');
+            t.equal(config.get('copy.value'), false, 'config resolved.');
+            t.equal(config.get('defaults.copy'), false, 'defaults mixed in.');
+        }
+        catch (error) {
+            console.log(error);
+        }
+
+    }));
+
     t.test('resolve do not pass criteria', Co.wrap(function *(t) {
         t.plan(1);
 
