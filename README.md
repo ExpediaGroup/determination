@@ -57,9 +57,9 @@ config.merge({ some: { key: other: 'another value' }});
 config.get('some.key.other'); //'another value'
 ```
 
-### Shortstop Handlers
+### Shortstop Protocol Handlers
 
-Two handlers are enabled by default:
+Two protocol handlers are enabled by default:
 
 - `import:path` - merges the contents of a given file, supporting comments (unlike `require`).
 - `config:key` - copies the value under the given key (supporting dot-delimited) to the key it is declared on.
