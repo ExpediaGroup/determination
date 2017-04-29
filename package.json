@@ -1,6 +1,12 @@
 {
   "name": "determination",
   "description": "Configuration resolver using confidence and shortstop.",
+  "keywords": [
+      "application",
+      "configuration",
+      "confidence",
+      "shortstop"
+  ],
   "version": "1.0.0",
   "author": "Trevor Livingston <tlivings@gmail.com>",
   "repository": {
