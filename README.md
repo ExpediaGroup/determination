@@ -18,8 +18,8 @@ const Determination = require('determination');
     - `config` (_String_) - required path to a JSON configuration.
     - `criteria` (_Object_) - optional resolution criteria. See [confidence](https://github.com/hapijs/confidence). Minimally will always contain `process.env` under the key `env`.
     - `protocols` (_Object_) - optional mapping of protocols for [shortstop](https://github.com/krakenjs/shortstop).
-    - `defaults` (_Object_) - optional default configuration values.
-    - `overrides` (_Object_) - optional override configuration values.
+    - `defaults` (_Object_ | _String_) - optional default configuration values.
+    - `overrides` (_Object_ | _String_) - optional override configuration values.
 - returns - a resolver.
 
 **resolver.resolve([callback])**
