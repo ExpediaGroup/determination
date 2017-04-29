@@ -71,6 +71,64 @@ Test('test determination', (t) => {
 
     }));
 
+    t.test('resolve defaults with string', Co.wrap(function *(t) {
+        t.plan(1);
+
+        const defaults = Path.resolve('./test/fixtures/d.json');
+
+        try {
+            const config = yield Determination.create({ config: Path.join(__dirname, './fixtures/a.json'), defaults }).resolve();
+
+            t.equal(config.get('overrides_and_defaults'), 'value', 'defaults mixed in from string.');
+        }
+        catch (error) {
+            console.log(error);
+        }
+
+    }));
+
+    t.test('resolve with overrides', Co.wrap(function *(t) {
+        t.plan(3);
+
+        const overrides = {
+            overrides: {
+                copy: 'config:test.value'
+            }
+        };
+
+        const criteria = {
+            pass: 'false'
+        };
+
+        try {
+            const config = yield Determination.create({ config: Path.join(__dirname, './fixtures/a.json'), criteria, overrides }).resolve();
+
+            t.equal(config.get('test.value'), false, 'criteria resolved.');
+            t.equal(config.get('copy.value'), false, 'config resolved.');
+            t.equal(config.get('overrides.copy'), false, 'overrides mixed in.');
+        }
+        catch (error) {
+            console.log(error);
+        }
+
+    }));
+
+    t.test('resolve overrides with string', Co.wrap(function *(t) {
+        t.plan(1);
+
+        const overrides = Path.resolve('./test/fixtures/d.json');
+
+        try {
+            const config = yield Determination.create({ config: Path.join(__dirname, './fixtures/a.json'), overrides }).resolve();
+
+            t.equal(config.get('overrides_and_defaults'), 'value', 'defaults mixed in from string.');
+        }
+        catch (error) {
+            console.log(error);
+        }
+
+    }));
+
     t.test('resolve do not pass criteria', Co.wrap(function *(t) {
         t.plan(1);
 
