@@ -4,6 +4,8 @@ Configuration resolver. `determination` loads a JSON configuration file, resolvi
 
 In addition, `determination` supports javascript style comments in your JSON using [shush](https://github.com/krakenjs/shush).
 
+Note: `determination` borrows heavily from [confit](https://github.com/krakenjs/confit), but prefers `confidence` for resolving environment as well as other criteria for filtering.
+
 ### Usage
 
 ```javascript
