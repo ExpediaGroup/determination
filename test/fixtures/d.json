@@ -1,0 +1,4 @@
+{
+    //Test resolving defaults and overrides
+    "overrides_and_defaults": "value"
+}

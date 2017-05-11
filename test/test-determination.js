@@ -9,7 +9,7 @@ const Co = require('co');
 Test('test determination', (t) => {
 
     t.test('resolve', Co.wrap(function *(t) {
-        t.plan(2);
+        t.plan(3);
 
         const criteria = {
             pass: 'false'
@@ -20,6 +20,7 @@ Test('test determination', (t) => {
 
             t.equal(config.get('test.value'), false, 'criteria resolved.');
             t.equal(config.get('copy.value'), false, 'config resolved.');
+            t.equal(config.get('array')[0], false, 'array resolved protocol.');
         }
         catch (error) {
             console.log(error);

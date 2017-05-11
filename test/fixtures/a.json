@@ -4,5 +4,8 @@
         "$default": { "value" : true },
         "false": { "value" : false }
     },
-    "copy": "config:test"
+    "copy": "config:test",
+    "array": [
+        "config:test.value"
+    ]
 }
