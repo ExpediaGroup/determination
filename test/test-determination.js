@@ -203,32 +203,61 @@ Test('test determination', (t) => {
 });
 
 Test('test store', (t) => {
-    t.plan(6);
 
-    const store = new Store({
-        key: 'value',
-        deep: {
-            key: 'value'
-        }
-    });
+    t.test('get set', (t) => {
+        t.plan(6);
 
-    t.equal(store._data.key, 'value', 'store data exists.');
-    t.equal(store.get('key'), 'value', 'getter works');
-    t.equal(store.get('deep.key'), 'value', 'get deep works');
-
-    store.set('key', 'new value');
-    store.set('deep.key', 'new value');
-
-    t.equal(store.get('key'), 'new value', 'set works');
-    t.equal(store.get('deep.key'), 'new value', 'deep set works.');
-
-    store.merge({
-        deep: {
-            deeper: {
+        const store = new Store({
+            key: 'value',
+            deep: {
                 key: 'value'
             }
-        }
+        });
+
+        t.equal(store._data.key, 'value', 'store data exists.');
+        t.equal(store.get('key'), 'value', 'getter works');
+        t.equal(store.get('deep.key'), 'value', 'get deep works');
+
+        store.set('key', 'new value');
+        store.set('deep.key', 'new value');
+
+        t.equal(store.get('key'), 'new value', 'set works');
+        t.equal(store.get('deep.key'), 'new value', 'deep set works.');
+
+        store.merge({
+            deep: {
+                deeper: {
+                    key: 'value'
+                }
+            }
+        });
+
+        t.equal(store.get('deep.deeper.key'), 'value', 'merge works.');
     });
 
-    t.equal(store.get('deep.deeper.key'), 'value', 'merge works.');
+    t.test('merge use', (t) => {
+        t.plan(2);
+        
+        const store = new Store({
+            a: 'a'
+        });
+
+        const store2 = new Store({
+            b: 'b'
+        });
+
+        const obj = {
+            c: 'c'
+        };
+
+        store.use(store2);
+
+        t.equal(store.get('b'), 'b', 'merged store.');
+
+        store.merge(obj);
+
+        t.equal(store.get('c'), 'c', 'merged object.');
+
+    });
+
 });
