@@ -1,4 +1,9 @@
 
+### 2.0.0
+
+- Protocols are bound with context `config`.
+- [BREAKING] `defaults` and `overrides` are merged prior to resolving criteria or handlers.
+
 ### 1.3.0
 
 - `config.data` returns a clone of the underlying store data.

@@ -17,9 +17,9 @@ const Determination = require('determination');
 - `options` (_Object_) - an options object containing:
     - `config` (_String_) - required path to a JSON configuration.
     - `criteria` (_Object_) - optional resolution criteria. See [confidence](https://github.com/hapijs/confidence). Minimally will always contain `process.env` under the key `env`.
-    - `protocols` (_Object_) - optional mapping of protocols for [shortstop](https://github.com/krakenjs/shortstop).
-    - `defaults` (_Object_ | _String_) - optional default configuration values.
-    - `overrides` (_Object_ | _String_) - optional override configuration values.
+    - `protocols` (_Object_) - optional mapping of protocols for [shortstop](https://github.com/krakenjs/shortstop). Protocols are bound with context `config`, where `config` is the configuration being resolved. Obviously this doesn't work with arrow functions.
+    - `defaults` (_Object_ | _String_) - optional default pre-resolved configuration values.
+    - `overrides` (_Object_ | _String_) - optional override pre-resolved configuration values.
 - returns - a resolver.
 
 **resolver.resolve([callback])**
@@ -67,6 +67,36 @@ Two protocol handlers are enabled by default:
 
 - `import:path` - merges the contents of a given file, supporting comments (unlike `require`).
 - `config:key` - copies the value under the given key (supporting dot-delimited) to the key it is declared on.
+
+### Custom Protocol Handlers
+
+An example of utilizing a custom protocol handler is below. This takes advantage of the context bound to the handler.
+
+`config.json`
+```json
+{
+    "thing1": "one",
+    "thing2": "two",
+    "things": "eval:${thing1} and ${thing2}"
+}
+```
+
+and
+
+```javascript
+const Determination = require('determination');
+const VM = require('vm');
+
+const protocols = {
+    eval(expression) {
+        return VM.runInNewContext('`' + expression + '`', this);
+    }
+};
+
+Determination.create({ config: Path.join(__dirname, './config.json'), protocols }).resolve((error, config) => {
+    config.get('things'); //"one and two"
+});
+```
 
 ### Resolution Order
 
