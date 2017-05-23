@@ -53,6 +53,7 @@ resolver.resolve((error, config) => {
 - `set(string: key, any: value)` - sets the given `value` on the given `key`, where dot-delimited `key` may traverse the configuration store.
 - `merge(object: value)` - merges the given `value` into the configuration store.
 - `use(object: store)` - merges the given `store` into the configuration store.
+- `data` - accessor for a clone of the underlying store data (modifying this will not modify store).
 
 ```javascript
 config.set('some.key.name', 'value');

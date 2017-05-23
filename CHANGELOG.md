@@ -1,4 +1,8 @@
 
+### 1.3.0
+
+- `config.data` returns a clone of the underlying store data.
+
 ### 1.2.0
 
 - `config.use` is now a thing.

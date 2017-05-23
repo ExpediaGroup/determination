@@ -205,7 +205,7 @@ Test('test determination', (t) => {
 Test('test store', (t) => {
 
     t.test('get set', (t) => {
-        t.plan(6);
+        t.plan(9);
 
         const store = new Store({
             key: 'value',
@@ -214,7 +214,7 @@ Test('test store', (t) => {
             }
         });
 
-        t.equal(store._data.key, 'value', 'store data exists.');
+        t.equal(store._data.key, 'value', 'store _data exists.');
         t.equal(store.get('key'), 'value', 'getter works');
         t.equal(store.get('deep.key'), 'value', 'get deep works');
 
@@ -223,6 +223,13 @@ Test('test store', (t) => {
 
         t.equal(store.get('key'), 'new value', 'set works');
         t.equal(store.get('deep.key'), 'new value', 'deep set works.');
+
+        t.equal(typeof store.data, 'object', 'store.data returns an object.');
+        t.equal(store.data.key, 'new value', 'store.data is the same as underlying data.');
+
+        store.data.temp = 'temp';
+
+        t.equal(store.get('temp'), undefined, 'setting store.data does not affect store.');
 
         store.merge({
             deep: {
@@ -237,7 +244,7 @@ Test('test store', (t) => {
 
     t.test('merge use', (t) => {
         t.plan(2);
-        
+
         const store = new Store({
             a: 'a'
         });
