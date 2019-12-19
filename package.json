@@ -2,12 +2,12 @@
   "name": "determination",
   "description": "Configuration resolver using confidence and shortstop.",
   "keywords": [
-      "application",
-      "configuration",
-      "confidence",
-      "shortstop"
+    "application",
+    "configuration",
+    "confidence",
+    "shortstop"
   ],
-  "version": "2.0.0",
+  "version": "3.0.0",
   "author": "Trevor Livingston <tlivings@gmail.com>",
   "repository": {
     "type": "git",
@@ -15,30 +15,29 @@
   },
   "bugs": "http://github.com/tlivings/determination/issues",
   "engines": {
-    "node": ">= 6.0.0"
+    "node": ">= 8.0.0"
   },
   "dependencies": {
-    "async": "^2.3.0",
-    "co": "^4.6.0",
     "confidence": "^3.0.2",
     "dot-prop": "^4.1.1",
     "entries": "^1.0.1",
-    "hoek": "^4.1.1",
-    "joi": "^10.4.1",
+    "@hapi/hoek": "^8.5.0",
+    "@hapi/joi": "^16.1.7",
     "load-jsonic-sync": "^1.0.1",
     "shortstop": "^1.0.3"
   },
   "devDependencies": {
-    "eslint": "^3.7.1",
+    "eslint": "^5.15.1",
     "eslint-config-hapi": "^10.0.0",
     "eslint-plugin-hapi": "^4.0.0",
-    "istanbul": "^0.4.1",
+    "nyc": "^14.1.1",
     "tape": "^4.2.2"
   },
   "scripts": {
-    "cover": "istanbul cover tape -- test/*.js",
+    "cover": "nyc npm test",
     "lint": "eslint lib",
-    "test": "tape test/*.js"
+    "test": "npm run lint && tape test/*.js"
   },
-  "main": "./lib"
+  "main": "./lib",
+  "license": "MIT"
 }

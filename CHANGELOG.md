@@ -1,4 +1,9 @@
 
+### 3.0.0
+
+- Updated license and copyright
+- [BREAKING] Updated Node.js supported version
+
 ### 2.0.0
 
 - Protocols are bound with context `config`.

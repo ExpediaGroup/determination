@@ -1,5 +1,9 @@
 {
   "extends": ["eslint-config-hapi"],
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
   "env": {
     "browser": false,
     "node": true
@@ -9,6 +13,7 @@
     "no-cond-assign": [0],
     "no-console": [0],
     "hapi/hapi-scope-start": [0],
-    "no-shadow": [0]
+    "no-shadow": [0],
+    "no-trailing-spaces": [0]
   }
 }

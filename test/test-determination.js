@@ -4,11 +4,10 @@ const Test = require('tape');
 const Determination = require('../lib/index');
 const Store = require('../lib/store');
 const Path = require('path');
-const Co = require('co');
 
 Test('test determination', (t) => {
 
-    t.test('resolve', Co.wrap(function *(t) {
+    t.test('resolve', async (t) => {
         t.plan(3);
 
         const criteria = {
@@ -16,7 +15,7 @@ Test('test determination', (t) => {
         };
 
         try {
-            const config = yield Determination.create({ config: Path.join(__dirname, './fixtures/a.json'), criteria }).resolve();
+            const config = await Determination.create({ config: Path.join(__dirname, './fixtures/a.json'), criteria }).resolve();
 
             t.equal(config.get('test.value'), false, 'criteria resolved.');
             t.equal(config.get('copy.value'), false, 'config resolved.');
@@ -26,9 +25,9 @@ Test('test determination', (t) => {
             console.log(error);
         }
 
-    }));
+    });
 
-    t.test('resolve import', Co.wrap(function *(t) {
+    t.test('resolve import', async (t) => {
         t.plan(1);
 
         const criteria = {
@@ -36,7 +35,7 @@ Test('test determination', (t) => {
         };
 
         try {
-            const config = yield Determination.create({ config: Path.join(__dirname, './fixtures/c.json'), criteria }).resolve();
+            const config = await Determination.create({ config: Path.join(__dirname, './fixtures/c.json'), criteria }).resolve();
 
             t.equal(config.get('a.test.value'), false, 'criteria resolved.');
         }
@@ -44,9 +43,9 @@ Test('test determination', (t) => {
             console.log(error);
         }
 
-    }));
+    });
 
-    t.test('resolve with defaults', Co.wrap(function *(t) {
+    t.test('resolve with defaults', async (t) => {
         t.plan(3);
 
         const defaults = {
@@ -60,7 +59,7 @@ Test('test determination', (t) => {
         };
 
         try {
-            const config = yield Determination.create({ config: Path.join(__dirname, './fixtures/a.json'), criteria, defaults }).resolve();
+            const config = await Determination.create({ config: Path.join(__dirname, './fixtures/a.json'), criteria, defaults }).resolve();
 
             t.equal(config.get('test.value'), false, 'criteria resolved.');
             t.equal(config.get('copy.value'), false, 'config resolved.');
@@ -70,15 +69,15 @@ Test('test determination', (t) => {
             console.log(error);
         }
 
-    }));
+    });
 
-    t.test('resolve defaults with string', Co.wrap(function *(t) {
+    t.test('resolve defaults with string', async (t) => {
         t.plan(1);
 
         const defaults = Path.resolve('./test/fixtures/d.json');
 
         try {
-            const config = yield Determination.create({ config: Path.join(__dirname, './fixtures/a.json'), defaults }).resolve();
+            const config = await Determination.create({ config: Path.join(__dirname, './fixtures/a.json'), defaults }).resolve();
 
             t.equal(config.get('overrides_and_defaults'), 'value', 'defaults mixed in from string.');
         }
@@ -86,9 +85,9 @@ Test('test determination', (t) => {
             console.log(error);
         }
 
-    }));
+    });
 
-    t.test('resolve with overrides', Co.wrap(function *(t) {
+    t.test('resolve with overrides', async (t) => {
         t.plan(3);
 
         const overrides = {
@@ -102,7 +101,7 @@ Test('test determination', (t) => {
         };
 
         try {
-            const config = yield Determination.create({ config: Path.join(__dirname, './fixtures/a.json'), criteria, overrides }).resolve();
+            const config = await Determination.create({ config: Path.join(__dirname, './fixtures/a.json'), criteria, overrides }).resolve();
 
             t.equal(config.get('test.value'), false, 'criteria resolved.');
             t.equal(config.get('copy.value'), false, 'config resolved.');
@@ -112,15 +111,15 @@ Test('test determination', (t) => {
             console.log(error);
         }
 
-    }));
+    });
 
-    t.test('resolve overrides with string', Co.wrap(function *(t) {
+    t.test('resolve overrides with string', async (t) => {
         t.plan(1);
 
         const overrides = Path.resolve('./test/fixtures/d.json');
 
         try {
-            const config = yield Determination.create({ config: Path.join(__dirname, './fixtures/a.json'), overrides }).resolve();
+            const config = await Determination.create({ config: Path.join(__dirname, './fixtures/a.json'), overrides }).resolve();
 
             t.equal(config.get('overrides_and_defaults'), 'value', 'defaults mixed in from string.');
         }
@@ -128,13 +127,13 @@ Test('test determination', (t) => {
             console.log(error);
         }
 
-    }));
+    });
 
-    t.test('resolve do not pass criteria', Co.wrap(function *(t) {
+    t.test('resolve do not pass criteria', async (t) => {
         t.plan(1);
 
         try {
-            const config = yield Determination.create({ config: Path.join(__dirname, './fixtures/a.json') }).resolve();
+            const config = await Determination.create({ config: Path.join(__dirname, './fixtures/a.json') }).resolve();
 
             t.equal(config.get('test.value'), true, 'no criteria resolved.');
         }
@@ -142,7 +141,7 @@ Test('test determination', (t) => {
             console.log(error);
         }
 
-    }));
+    });
 
     t.test('resolve with callback', (t) => {
         t.plan(1);
@@ -152,7 +151,7 @@ Test('test determination', (t) => {
         });
     });
 
-    t.test('resolve do not pass criteria', Co.wrap(function *(t) {
+    t.test('resolve do not pass criteria', async (t) => {
         t.plan(2);
 
         const protocols = {
@@ -163,13 +162,13 @@ Test('test determination', (t) => {
         };
 
         try {
-            yield Determination.create({ config: Path.join(__dirname, './fixtures/b.json'), protocols }).resolve();
+            await Determination.create({ config: Path.join(__dirname, './fixtures/b.json'), protocols }).resolve();
         }
         catch (error) {
             t.ok(error, 'received error');
         }
 
-    }));
+    });
 
     t.test('resolve with error callback', (t) => {
         t.plan(2);
@@ -186,11 +185,11 @@ Test('test determination', (t) => {
         });
     });
 
-    t.test('resolve bad config path', Co.wrap(function *(t) {
+    t.test('resolve bad config path', async (t) => {
         t.plan(1);
 
         try {
-            const config = yield Determination.create({ config: Path.join(__dirname, './fixtures/b.json') }).resolve();
+            const config = await Determination.create({ config: Path.join(__dirname, './fixtures/b.json') }).resolve();
 
             t.equal(config.get('copy'), undefined, 'config protocol returned undefined for non-existent key.');
         }
@@ -198,7 +197,7 @@ Test('test determination', (t) => {
             console.log(error);
         }
 
-    }));
+    });
 
 });
 
