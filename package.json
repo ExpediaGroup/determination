@@ -1,5 +1,5 @@
 {
-  "name": "determination",
+  "name": "@vrbo/determination",
   "description": "Configuration resolver using confidence and shortstop.",
   "keywords": [
     "application",
@@ -11,9 +11,9 @@
   "author": "Trevor Livingston <tlivings@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/tlivings/determination.git"
+    "url": "git://github.com/expediagroup/determination.git"
   },
-  "bugs": "http://github.com/tlivings/determination/issues",
+  "bugs": "http://github.com/expediagroup/determination/issues",
   "engines": {
     "node": ">= 8.0.0"
   },
