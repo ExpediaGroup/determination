@@ -1,15 +1,15 @@
 # determination
 
-Configuration resolver. `determination` loads a JSON configuration file, resolving against criteria using [confidence](https://github.com/hapijs/confidence) and [shortstop](https://github.com/krakenjs/shortstop) protocol handlers.
+Configuration resolver. `@vrbo/determination` loads a JSON configuration file, resolving against criteria using [confidence](https://github.com/hapijs/confidence) and [shortstop](https://github.com/krakenjs/shortstop) protocol handlers.
 
-In addition, `determination` supports javascript style comments in your JSON using [shush](https://github.com/krakenjs/shush).
+In addition, `@vrbo/determination` supports javascript style comments in your JSON using [shush](https://github.com/krakenjs/shush).
 
-Note: `determination` borrows heavily from [confit](https://github.com/krakenjs/confit), but prefers `confidence` for resolving environment as well as other criteria for filtering.
+Note: `@vrbo/determination` borrows heavily from [confit](https://github.com/krakenjs/confit), but prefers `confidence` for resolving environment as well as other criteria for filtering.
 
 ### Usage
 
 ```javascript
-const Determination = require('determination');
+const Determination = require('@vrbo/determination');
 ```
 
 **Determination.create(options)**
@@ -28,7 +28,7 @@ const Determination = require('determination');
 - returns - a promise if `callback` is not provided.
 
 ```javascript
-const Determination = require('determination');
+const Determination = require('@vrbo/determination');
 const Path = require('path');
 const Handlers = require('shortstop-handlers');
 
@@ -84,7 +84,7 @@ An example of utilizing a custom protocol handler is below. This takes advantage
 and
 
 ```javascript
-const Determination = require('determination');
+const Determination = require('@vrbo/determination');
 const VM = require('vm');
 
 const protocols = {
