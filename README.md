@@ -1,3 +1,5 @@
+![](https://github.com/ExpediaGroup/determination/workflows/Node_CI/badge.svg)
+
 # determination
 
 Configuration resolver. `@vrbo/determination` loads a JSON configuration file, resolving against criteria using [confidence](https://github.com/hapijs/confidence) and [shortstop](https://github.com/krakenjs/shortstop) protocol handlers.
