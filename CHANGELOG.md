@@ -1,3 +1,6 @@
+### 3.0.1
+
+- Bump dot-prop from 4.2.0 to 5.2.0 ([#4](https://github.com/ExpediaGroup/determination/pull/4))
 
 ### 3.0.0
 
