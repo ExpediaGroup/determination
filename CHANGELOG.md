@@ -1,3 +1,9 @@
+### 4.0.0
+
+- [Breaking] Drop support for node < 12.
+- Update Github test workflow to only test againt node v 12.x
+- Update dependencies, npm, and engines in package.json to support node version >= 12.
+
 ### 3.0.1
 
 - Bump dot-prop from 4.2.0 to 5.2.0 ([#4](https://github.com/ExpediaGroup/determination/pull/4))
