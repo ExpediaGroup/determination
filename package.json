@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@hapi/hoek": "^9.0.4",
+    "@hapipal/confidence": "^6.0.1",
     "confidence": "^3.0.2",
     "dot-prop": "^5.2.0",
     "entries": "^1.0.1",
@@ -37,7 +38,7 @@
   "scripts": {
     "cover": "nyc npm test",
     "lint": "eslint lib",
-    "test": "npm run lint && tape test/*.js"
+    "test": "npm run lint && ENV_TEST=5678 tape test/*.js"
   },
   "main": "./lib",
   "license": "MIT"

@@ -266,4 +266,20 @@ Test('test store', (t) => {
 
     });
 
+    t.test('resolve env', async (t) => {
+        t.plan(2);
+
+
+        try {
+            const config = await Determination.create({ config: Path.join(__dirname, './fixtures/e.json') }).resolve();
+
+            t.equal(config.get('test1'), 5678, 'env accessed.');
+            t.equal(config.get('test2'), 1234, 'default accessed.');
+        }
+        catch (error) {
+            console.log(error);
+        }
+
+    });
+
 });

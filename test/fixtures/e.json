@@ -1,0 +1,11 @@
+{
+    "test1": {
+        "$env": "ENV_TEST",
+        "$coerce": "number"
+    },
+    "test2": {
+        "$env": "ENV_NONE",
+        "$coerce": "number",
+        "$default": 1234
+    }
+}
