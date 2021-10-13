@@ -1,3 +1,8 @@
+### 5.0.0
+
+- [Breaking] [confidence](https://github.com/hapipal/confidence), the library that parses the json config files has been updated from v3 to v6.
+
+
 ### 4.0.0
 
 - [Breaking] Drop support for node < 12.

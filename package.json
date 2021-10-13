@@ -1,13 +1,13 @@
 {
   "name": "@vrbo/determination",
   "description": "Configuration resolver using confidence and shortstop.",
+  "version": "5.0.0",
   "keywords": [
     "application",
     "configuration",
     "confidence",
     "shortstop"
   ],
-  "version": "4.0.0",
   "author": "Trevor Livingston <tlivings@gmail.com>",
   "repository": {
     "type": "git",
