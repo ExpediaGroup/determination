@@ -1,3 +1,9 @@
+### 6.0.0
+
+- [Breaking] Drop support for node < 14.
+- Update Github test workflow to only test againt node v 14.x
+- Update dependencies, npm, and engines in package.json to support node version >= 14.
+
 ### 5.0.0
 
 - [Breaking] [confidence](https://github.com/hapipal/confidence), the library that parses the json config files has been updated from v3 to v6.

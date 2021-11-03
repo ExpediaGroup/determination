@@ -1,7 +1,7 @@
 {
   "name": "@vrbo/determination",
   "description": "Configuration resolver using confidence and shortstop.",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "keywords": [
     "application",
     "configuration",
