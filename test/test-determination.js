@@ -211,7 +211,6 @@ Test('test determination', (t) => {
         }
     });
 
-
 });
 
 Test('test store', (t) => {
