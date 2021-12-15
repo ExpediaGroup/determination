@@ -21,10 +21,10 @@
   "dependencies": {
     "@hapi/hoek": "^9.0.4",
     "@hapipal/confidence": "^6.0.1",
+    "comment-json": "^4.1.1",
     "dot-prop": "^5.2.0",
     "entries": "^1.0.1",
     "joi": "^17.2.0",
-    "load-jsonic-sync": "^1.0.1",
     "shortstop": "^1.0.3"
   },
   "devDependencies": {
