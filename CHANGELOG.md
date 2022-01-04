@@ -1,3 +1,7 @@
+### 6.0.1
+
+- Change the json w/comments parser to eliminate a circular dependency warning with node 14 (#8)
+
 ### 6.0.0
 
 - [Breaking] Drop support for node < 14.
