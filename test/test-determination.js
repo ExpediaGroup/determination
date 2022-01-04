@@ -199,6 +199,18 @@ Test('test determination', (t) => {
 
     });
 
+    t.test('resolve throw parsing error', async (t) => {
+        t.plan(1);
+
+        const filepath = Path.join(__dirname, './fixtures/error.json');
+        try {
+            await Determination.create({ config: filepath }).resolve();
+        }
+        catch (error) {
+            t.equal(error.toString().includes(`File: ${filepath}`), true, 'included the filename in the error');
+        }
+    });
+
 });
 
 Test('test store', (t) => {

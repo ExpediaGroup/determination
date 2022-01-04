@@ -1,10 +1,14 @@
 {
+    /*
+     * Block comment
+    **/
     "test": {
-        "$filter": "pass",
+        "$filter": "pass", // inline comment
         "$default": { "value" : true },
         "false": { "value" : false }
     },
     "copy": "config:test",
+    // line comment
     "array": [
         "config:test.value"
     ]
