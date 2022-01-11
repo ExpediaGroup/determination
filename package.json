@@ -23,6 +23,17 @@
   "publishConfig": {
     "access": "public"
   },
+  "scripts": {
+    "commit": "cz",
+    "cover": "nyc npm test",
+    "lint": "eslint lib",
+    "test": "npm run lint && ENV_TEST=5678 tape test/*.js"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
   "dependencies": {
     "@hapi/hoek": "^9.0.4",
     "@hapipal/confidence": "^6.0.1",
@@ -43,16 +54,5 @@
     "nyc": "^14.1.1",
     "semantic-release": "^18.0.1",
     "tape": "^4.2.2"
-  },
-  "scripts": {
-    "commit": "cz",
-    "cover": "nyc npm test",
-    "lint": "eslint lib",
-    "test": "npm run lint && ENV_TEST=5678 tape test/*.js"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   }
 }
