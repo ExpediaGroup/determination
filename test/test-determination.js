@@ -45,6 +45,50 @@ Test('test determination', (t) => {
 
     });
 
+    t.test('resolve import, no basedir', async (t) => {
+        t.plan(1);
+
+        const criteria = {
+            pass: 'false'
+        };
+
+        const configObj = {
+            a: 'import:./test/fixtures/a.json'
+        };
+
+        try {
+            const config = await Determination.create({ config: configObj, criteria }).resolve();
+
+            t.equal(config.get('a.test.value'), false, 'criteria resolved.');
+        }
+        catch (error) {
+            console.log(error);
+        }
+
+    });
+
+    t.test('resolve with config as object', async (t) => {
+        t.plan(3);
+
+        const configObj = {
+            test: 'foo',
+            copy: 'config:test',
+            array: ['config:test']
+        };
+
+        try {
+            const config = await Determination.create({ config: configObj, basedir: '/' }).resolve();
+
+            t.equal(config.get('test'), 'foo', 'criteria resolved.');
+            t.equal(config.get('copy'), 'foo', 'config resolved.');
+            t.equal(config.get('array')[0], 'foo', 'array resolved protocol.');
+        }
+        catch (error) {
+            console.log(error);
+        }
+
+    });
+
     t.test('resolve with defaults', async (t) => {
         t.plan(3);
 
