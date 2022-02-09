@@ -1,3 +1,10 @@
+# [6.1.0](https://github.com/expediagroup/determination/compare/v6.0.1...v6.1.0) (2022-02-09)
+
+
+### Features
+
+* Allows for configuration as an object ([#10](https://github.com/expediagroup/determination/issues/10)) ([a864038](https://github.com/expediagroup/determination/commit/a864038ab44063a7b0d6b38e43147b1d26f53b71))
+
 ### 6.0.1
 
 - Change the json w/comments parser to eliminate a circular dependency warning with node 14 (#8)
