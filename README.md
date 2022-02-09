@@ -17,7 +17,8 @@ const Determination = require('@vrbo/determination');
 **Determination.create(options)**
 
 - `options` (_Object_) - an options object containing:
-    - `config` (_String_) - required path to a JSON configuration.
+    - `config` (_String_ | _Object_) - required, either a path to a JSON configuration file or an object.
+    - `basedir` (_String_) - optional path used for resolving relative imports within configs. If config is a file, it defaults to the config file's directory. If config is an object, it defaults to `process.cwd()`.
     - `criteria` (_Object_) - optional resolution criteria. See [confidence](https://github.com/hapijs/confidence). Minimally will always contain `process.env` under the key `env`.
     - `protocols` (_Object_) - optional mapping of protocols for [shortstop](https://github.com/krakenjs/shortstop). Protocols are bound with context `config`, where `config` is the configuration being resolved. Obviously this doesn't work with arrow functions.
     - `defaults` (_Object_ | _String_) - optional default pre-resolved configuration values.
