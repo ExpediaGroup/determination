@@ -1,3 +1,10 @@
+## [6.1.1](https://github.com/expediagroup/determination/compare/v6.1.0...v6.1.1) (2022-11-18)
+
+
+### Bug Fixes
+
+* bump minimatch from 3.0.4 to 3.1.2 ([#12](https://github.com/expediagroup/determination/issues/12)) ([0f60281](https://github.com/expediagroup/determination/commit/0f6028145a5ac14fa643b16788c7b4eb7e551d62))
+
 # [6.1.0](https://github.com/expediagroup/determination/compare/v6.0.1...v6.1.0) (2022-02-09)
 
 
