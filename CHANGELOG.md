@@ -1,3 +1,10 @@
+## [6.1.2](https://github.com/expediagroup/determination/compare/v6.1.1...v6.1.2) (2022-11-29)
+
+
+### Bug Fixes
+
+* update devDependency ansi-regex to 5.0.1 ([#13](https://github.com/expediagroup/determination/issues/13)) ([b11374f](https://github.com/expediagroup/determination/commit/b11374f026eb31b9d25b7e756d421aa78919b446))
+
 ## [6.1.1](https://github.com/expediagroup/determination/compare/v6.1.0...v6.1.1) (2022-11-18)
 
 
