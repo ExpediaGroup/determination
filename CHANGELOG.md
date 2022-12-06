@@ -1,3 +1,10 @@
+## [6.1.3](https://github.com/expediagroup/determination/compare/v6.1.2...v6.1.3) (2022-12-06)
+
+
+### Bug Fixes
+
+* bump semantic-release from 18.0.1 to 19.0.3 ([#17](https://github.com/expediagroup/determination/issues/17)) ([0b03a43](https://github.com/expediagroup/determination/commit/0b03a4304fdca4275d88aee9a20a5611a8482a20))
+
 ## [6.1.2](https://github.com/expediagroup/determination/compare/v6.1.1...v6.1.2) (2022-11-29)
 
 
