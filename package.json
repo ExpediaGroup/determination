@@ -48,7 +48,7 @@
     "@semantic-release/git": "^10.0.1",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^5.15.1",
+    "eslint": "^8.32.0",
     "eslint-config-hapi": "^10.0.0",
     "eslint-plugin-hapi": "^4.0.0",
     "nyc": "^14.1.1",
