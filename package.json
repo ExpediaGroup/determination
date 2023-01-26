@@ -51,7 +51,7 @@
     "eslint": "^5.15.1",
     "eslint-config-hapi": "^10.0.0",
     "eslint-plugin-hapi": "^4.0.0",
-    "nyc": "^14.1.1",
+    "nyc": "^15.1.0",
     "semantic-release": "^19.0.3",
     "tape": "^4.2.2"
   }
