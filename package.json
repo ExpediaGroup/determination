@@ -13,11 +13,11 @@
   "main": "./lib",
   "repository": {
     "type": "git",
-    "url": "git://github.com/expediagroup/determination.git"
+    "url": "git://github.com/ExpediaGroup/determination.git"
   },
-  "bugs": "http://github.com/expediagroup/determination/issues",
+  "bugs": "https://github.com/ExpediaGroup/determination/issues",
   "engines": {
-    "node": ">= 14.0.0",
+    "node": ">=14.0.0",
     "npm": ">=6.0.0"
   },
   "publishConfig": {
@@ -35,24 +35,23 @@
     }
   },
   "dependencies": {
-    "@hapi/hoek": "^9.0.4",
+    "@hapi/hoek": "^9.0.4 || ^10.0.0 || ^11.0.1",
     "@hapipal/confidence": "^6.0.1",
     "comment-json": "^4.1.1",
-    "dot-prop": "^5.2.0",
+    "dot-prop": "^6.0.0",
     "entries": "^1.0.1",
     "joi": "^17.2.0",
     "shortstop": "^1.0.3"
   },
   "devDependencies": {
+    "@hapi/eslint-plugin": "^6.0.0",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^5.15.1",
-    "eslint-config-hapi": "^10.0.0",
-    "eslint-plugin-hapi": "^4.0.0",
-    "nyc": "^14.1.1",
+    "eslint": "^8.0.0",
+    "nyc": "^15.0.0",
     "semantic-release": "^19.0.3",
-    "tape": "^4.2.2"
+    "tape": "^5.0.0"
   }
 }

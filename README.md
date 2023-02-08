@@ -17,12 +17,12 @@ const Determination = require('@vrbo/determination');
 **Determination.create(options)**
 
 - `options` (_Object_) - an options object containing:
-    - `config` (_String_ | _Object_) - required, either a path to a JSON configuration file or an object.
-    - `basedir` (_String_) - optional path used for resolving relative imports within configs. If config is a file, it defaults to the config file's directory. If config is an object, it defaults to `process.cwd()`.
-    - `criteria` (_Object_) - optional resolution criteria. See [confidence](https://github.com/hapijs/confidence). Minimally will always contain `process.env` under the key `env`.
-    - `protocols` (_Object_) - optional mapping of protocols for [shortstop](https://github.com/krakenjs/shortstop). Protocols are bound with context `config`, where `config` is the configuration being resolved. Obviously this doesn't work with arrow functions.
-    - `defaults` (_Object_ | _String_) - optional default pre-resolved configuration values.
-    - `overrides` (_Object_ | _String_) - optional override pre-resolved configuration values.
+  - `config` (_String_ | _Object_) - required, either a path to a JSON configuration file or an object.
+  - `basedir` (_String_) - optional path used for resolving relative imports within configs. If config is a file, it defaults to the config file's directory. If config is an object, it defaults to `process.cwd()`.
+  - `criteria` (_Object_) - optional resolution criteria. See [confidence](https://github.com/hapijs/confidence). Minimally will always contain `process.env` under the key `env`.
+  - `protocols` (_Object_) - optional mapping of protocols for [shortstop](https://github.com/krakenjs/shortstop). Protocols are bound with context `config`, where `config` is the configuration being resolved. Obviously this doesn't work with arrow functions.
+  - `defaults` (_Object_ | _String_) - optional default pre-resolved configuration values.
+  - `overrides` (_Object_ | _String_) - optional override pre-resolved configuration values.
 - returns - a resolver.
 
 **resolver.resolve([callback])**
@@ -45,8 +45,8 @@ const resolver = Determination.create({
 });
 
 resolver.resolve((error, config) => {
-    //config.get
-    //config.set
+    // config.get
+    // config.set
 });
 ```
 
@@ -60,8 +60,14 @@ resolver.resolve((error, config) => {
 
 ```javascript
 config.set('some.key.name', 'value');
-config.merge({ some: { key: other: 'another value' }});
-config.get('some.key.other'); //'another value'
+config.merge({
+    some: {
+        key: {
+            other: 'another value',
+        },
+    },
+});
+config.get('some.key.other'); // 'another value'
 ```
 
 ### Shortstop Protocol Handlers
@@ -97,7 +103,7 @@ const protocols = {
 };
 
 Determination.create({ config: Path.join(__dirname, './config.json'), protocols }).resolve((error, config) => {
-    config.get('things'); //"one and two"
+    config.get('things'); // "one and two"
 });
 ```
 
