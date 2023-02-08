@@ -1,3 +1,10 @@
+# [6.2.0](https://github.com/ExpediaGroup/determination/compare/v6.1.3...v6.2.0) (2023-02-08)
+
+
+### Features
+
+* update dependencies [CAT-1533] ([#31](https://github.com/ExpediaGroup/determination/issues/31)) ([87af525](https://github.com/ExpediaGroup/determination/commit/87af525428f7d56de2120a72a8675e0265dee03a))
+
 ## [6.1.3](https://github.com/expediagroup/determination/compare/v6.1.2...v6.1.3) (2022-12-06)
 
 
