@@ -38,7 +38,7 @@
     "@hapi/hoek": "^9.0.4 || ^10.0.0 || ^11.0.1",
     "@hapipal/confidence": "^6.0.1",
     "comment-json": "^4.1.1",
-    "dot-prop": "^5.2.0",
+    "dot-prop": "^6.0.0",
     "entries": "^1.0.1",
     "joi": "^17.2.0",
     "shortstop": "^1.0.3"
