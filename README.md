@@ -45,8 +45,8 @@ const resolver = Determination.create({
 });
 
 resolver.resolve((error, config) => {
-    //config.get
-    //config.set
+    // config.get
+    // config.set
 });
 ```
 
@@ -60,8 +60,14 @@ resolver.resolve((error, config) => {
 
 ```javascript
 config.set('some.key.name', 'value');
-config.merge({ some: { key: other: 'another value' }});
-config.get('some.key.other'); //'another value'
+config.merge({
+    some: {
+        key: {
+            other: 'another value',
+        },
+    },
+});
+config.get('some.key.other'); // 'another value'
 ```
 
 ### Shortstop Protocol Handlers
@@ -97,7 +103,7 @@ const protocols = {
 };
 
 Determination.create({ config: Path.join(__dirname, './config.json'), protocols }).resolve((error, config) => {
-    config.get('things'); //"one and two"
+    config.get('things'); // "one and two"
 });
 ```
 
