@@ -44,13 +44,12 @@
     "shortstop": "^1.0.3"
   },
   "devDependencies": {
+    "@hapi/eslint-plugin": "^6.0.0",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.0.0",
-    "eslint-config-hapi": "^10.0.0",
-    "eslint-plugin-hapi": "^4.0.0",
     "nyc": "^15.0.0",
     "semantic-release": "^19.0.3",
     "tape": "^5.0.0"
