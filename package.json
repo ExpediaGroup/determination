@@ -13,11 +13,11 @@
   "main": "./lib",
   "repository": {
     "type": "git",
-    "url": "git://github.com/expediagroup/determination.git"
+    "url": "git://github.com/ExpediaGroup/determination.git"
   },
-  "bugs": "http://github.com/expediagroup/determination/issues",
+  "bugs": "https://github.com/ExpediaGroup/determination/issues",
   "engines": {
-    "node": ">= 14.0.0",
+    "node": ">=14.0.0",
     "npm": ">=6.0.0"
   },
   "publishConfig": {
