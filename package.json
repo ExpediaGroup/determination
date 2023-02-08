@@ -17,7 +17,7 @@
   },
   "bugs": "http://github.com/expediagroup/determination/issues",
   "engines": {
-    "node": ">= 14.0.0",
+    "node": ">=14.0.0",
     "npm": ">=6.0.0"
   },
   "publishConfig": {
@@ -35,10 +35,10 @@
     }
   },
   "dependencies": {
-    "@hapi/hoek": "^9.0.4",
+    "@hapi/hoek": "^11.0.1",
     "@hapipal/confidence": "^6.0.1",
     "comment-json": "^4.1.1",
-    "dot-prop": "^5.2.0",
+    "dot-prop": "^6.0.0",
     "entries": "^1.0.1",
     "joi": "^17.2.0",
     "shortstop": "^1.0.3"
@@ -48,11 +48,11 @@
     "@semantic-release/git": "^10.0.1",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^5.15.1",
+    "eslint": "^8.0.0",
     "eslint-config-hapi": "^10.0.0",
     "eslint-plugin-hapi": "^4.0.0",
-    "nyc": "^14.1.1",
+    "nyc": "^15.0.0",
     "semantic-release": "^19.0.3",
-    "tape": "^4.2.2"
+    "tape": "^5.0.0"
   }
 }
