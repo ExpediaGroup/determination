@@ -13,3 +13,10 @@ updates:
     reviewers:
       - "@ExpediaGroup/catalyst-committers"
     open-pull-requests-limit: 10
+    ignore:
+      # Ignore Dot Prop major updates
+      - dependency-name: "dot-prop"
+        update-types: ["version-update:semver-major"]
+      # Ignore Semantic Release major updates
+      - dependency-name: "semantic-release"
+        update-types: ["version-update:semver-major"]
