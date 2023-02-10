@@ -1,3 +1,10 @@
+# [6.3.0](https://github.com/ExpediaGroup/determination/compare/v6.2.0...v6.3.0) (2023-02-10)
+
+
+### Features
+
+* added support for Node.js v16 ([#32](https://github.com/ExpediaGroup/determination/issues/32)) ([100b3d6](https://github.com/ExpediaGroup/determination/commit/100b3d64fb9fe4fbc8e9b22ebbaff5cf969c8ce0))
+
 # [6.2.0](https://github.com/ExpediaGroup/determination/compare/v6.1.3...v6.2.0) (2023-02-08)
 
 
