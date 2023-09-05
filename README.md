@@ -1,5 +1,8 @@
 ![](https://github.com/ExpediaGroup/determination/workflows/Node_CI/badge.svg)
 
+# :warning: **Deprecation Notice** :warning:
+This package is now deprecated and will not receive any updates in the future.
+
 # determination
 
 Configuration resolver. `@vrbo/determination` loads a JSON configuration file, resolving against criteria using [confidence](https://github.com/hapijs/confidence) and [shortstop](https://github.com/krakenjs/shortstop) protocol handlers.
