@@ -1,4 +1,6 @@
 ![](https://github.com/ExpediaGroup/determination/workflows/Node_CI/badge.svg)
+![No Maintenance Intended](https://img.shields.io/maintenance/no/2023.svg)
+
 
 # :warning: **Deprecation Notice** :warning:
 This package is now deprecated and will not receive any updates in the future.
